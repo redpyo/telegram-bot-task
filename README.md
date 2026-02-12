@@ -146,11 +146,28 @@ mvnw test
 
 ## 설정
 
-`application.properties`에서 환경변수를 통해 설정합니다:
+`application.properties`의 `${BOT_TOKEN}`은 Spring Boot가 환경변수를 참조하는 문법입니다.
+이 파일에 실제 토큰을 직접 입력하면 git에 노출되므로, 아래 방법으로 설정하세요.
 
-```properties
-bot.token=${BOT_TOKEN:your-bot-token}
-bot.username=${BOT_USERNAME:your-bot-name}
+### .env 파일 (권장)
+
+프로젝트 루트에 `.env` 파일을 생성합니다. `.gitignore`에 포함되어 있어 git에 커밋되지 않습니다.
+
+```
+BOT_TOKEN=your-bot-token
+BOT_USERNAME=your-bot-username
+```
+
+### 환경변수
+
+```bash
+# Windows
+set BOT_TOKEN=your-bot-token
+set BOT_USERNAME=your-bot-username
+
+# Linux / macOS
+export BOT_TOKEN=your-bot-token
+export BOT_USERNAME=your-bot-username
 ```
 
 ### DB 연동 (선택)
