@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd /c \"where mvn\")",
+      "Bash(cmd /c:*)",
+      "Bash(./mvnw.cmd:*)"
+    ]
+  }
+}
